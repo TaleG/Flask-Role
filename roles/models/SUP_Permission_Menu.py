@@ -4,7 +4,7 @@
 from roles import db
 from .User import Support_Permission_Models, Support_Menu_Models
 
-class Permission_Menu(db.Model):
+class SUP_Permission_Menu_Model(db.Model):
     """Permission And menu Link"""
     __tablename__ = 'permission_menu'
 

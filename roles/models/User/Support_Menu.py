@@ -14,7 +14,7 @@ class Support_Menu_Models(db.Model):
     menuType = db.Column(db.Integer)
     menuOrder = db.Column(db.Integer)
     menuStatus = db.Column(db.Boolean)
-    menu_List = db.relationship('Permission_Menu',
+    menu_List = db.relationship('SUP_Permission_Menu_Model',
                                 backref="support_menu", lazy='dynamic')
 
 

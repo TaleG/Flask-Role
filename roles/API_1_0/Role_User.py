@@ -11,16 +11,18 @@ class Sup_User_Role_Views(Resource):
     def get(self, id):
         """
 
-        :param id:
+        :param id: ID是匹配的用户UID
         :return:
         """
         try:
+            # 查询用户所属权限信息
             User_Role_Data = SUP_User_Role_Models.query.filter_by(UserId=id).first()
         except Exception as e:
             current_app.logger.error(e)
             return jsonify(code=RET.NODATA, codemsg="Database Error.")
 
         try:
+            # 按ID查到的数据进行返回
             user_List = User_Role_Data.to_json()
         except Exception as e:
             current_app.logger.error(e)

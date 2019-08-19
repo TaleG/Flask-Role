@@ -9,7 +9,7 @@ class Support_Role_Models(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     roleName = db.Column(db.String(32), unique=True, nullable=False)
     roleDesc = db.Column(db.String(128))
-    roleList1 = db.relationship("Permission_Role_Models",
+    roleList1 = db.relationship("SUP_Permission_Role_Models",
                                backref='support_role', lazy='dynamic')
     roleList2 = db.relationship("SUP_User_Role_Models",
                                backref='support_role', lazy='dynamic')

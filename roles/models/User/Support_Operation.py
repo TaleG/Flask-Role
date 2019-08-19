@@ -8,7 +8,7 @@ class Support_Operation_Models(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     odesc = db.Column(db.String(128))
-    name = db.Column(db.String(32))
+    name = db.Column(db.String(32), unique=True, nullable=False)
     operation = db.Column(db.String(128))
     Operation_list = db.relationship("SUP_Permission_Operation_Models",
                                      backref='support_operation', lazy='dynamic')

@@ -8,13 +8,13 @@ class Support_Permission_Models(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     pdesc = db.Column(db.String(128))
-    name = db.Column(db.String(32))
+    name = db.Column(db.String(32), unique=True, nullable=False)
 
     Permission_to_list1 = db.relationship("SUP_Permission_Operation_Models",
                                           backref='support_permission', lazy='dynamic')
-    Permission_to_list2 = db.relationship("Permission_Role_Models",
+    Permission_to_list2 = db.relationship("SUP_Permission_Role_Models",
                                           backref="support_permission", lazy='dynamic')
-    Permission_to_list3 = db.relationship("Permission_Menu",
+    Permission_to_list3 = db.relationship("SUP_Permission_Menu_Model",
                                           backref="support_permission", lazy='dynamic')
 
     def to_json(self):
